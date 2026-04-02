@@ -8,7 +8,7 @@
 // - Flutter WindowManager mencegah screenshot konten sensitif
 
 import 'package:flutter/material.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:screen_protector/screen_protector.dart';
 import 'package:intl/intl.dart';
 import '../models/note_model.dart';
 import '../services/storage_service.dart';
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   /// 3. Screen recording oleh aplikasi lain
   Future<void> _enableSecureMode() async {
     try {
-      await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+      await ScreenProtector.preventScreenshotOn();
     } catch (e) {
       // Jika flutter_windowmanager tidak tersedia, lanjutkan tanpa crash
       debugPrint('HomeScreen: FLAG_SECURE tidak bisa diaktifkan: $e');

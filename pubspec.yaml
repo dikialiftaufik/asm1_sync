@@ -23,7 +23,6 @@ dependencies:
   path_provider: ^2.1.5
 
   # 🛡️ WINDOW MANAGER: Memblokir screenshot & sembunyikan di Recent Apps
-  flutter_windowmanager: ^0.2.0
 
   # 🔑 SECURE STORAGE: Menyimpan kunci enkripsi dengan aman di Keystore/Keychain
   flutter_secure_storage: ^9.2.4
@@ -33,6 +32,8 @@ dependencies:
 
   # 🔤 GOOGLE FONTS: Font DM Sans via CDN (tidak perlu download manual)
   google_fonts: ^6.2.1
+
+  screen_protector: ^1.5.1
 
 dev_dependencies:
   flutter_test:

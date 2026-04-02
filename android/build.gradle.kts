@@ -23,14 +23,18 @@ tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
 
+// PERBAIKAN FINAL: Menggunakan Plugin Hooking, bukan afterEvaluate
 subprojects {
-    afterEvaluate { project ->
-        if (project.hasProperty('android')) {
-            project.android {
+    // Kode ini akan bereaksi tepat saat library dikenali sebagai Android Library
+    plugins.withId("com.android.library") {
+        try {
+            extensions.configure<com.android.build.gradle.LibraryExtension>("android") {
                 if (namespace == null) {
-                    namespace project.group
+                    namespace = project.group.toString()
                 }
             }
+        } catch (e: Exception) {
+            // Abaikan jika terjadi kesalahan pembacaan ekstensi
         }
     }
 }

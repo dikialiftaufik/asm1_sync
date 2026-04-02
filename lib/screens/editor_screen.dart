@@ -8,7 +8,7 @@
 //   (real-time encryption akan membebani CPU dan menghabiskan baterai)
 
 import 'package:flutter/material.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:screen_protector/screen_protector.dart';
 import '../models/note_model.dart';
 import '../services/storage_service.dart';
 import '../theme/app_theme.dart';
@@ -56,7 +56,7 @@ class _EditorScreenState extends State<EditorScreen> {
 
   Future<void> _enableSecureMode() async {
     try {
-      await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+      await ScreenProtector.preventScreenshotOn();
     } catch (e) {
       debugPrint('EditorScreen: FLAG_SECURE tidak bisa diaktifkan: $e');
     }

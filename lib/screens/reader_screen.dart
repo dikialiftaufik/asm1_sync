@@ -18,7 +18,7 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:screen_protector/screen_protector.dart';
 import 'package:intl/intl.dart';
 import '../models/note_model.dart';
 import '../services/storage_service.dart';
@@ -74,7 +74,7 @@ class _ReaderScreenState extends State<ReaderScreen>
 
   Future<void> _enableSecureMode() async {
     try {
-      await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+      await ScreenProtector.preventScreenshotOn();
     } catch (e) {
       debugPrint('ReaderScreen: FLAG_SECURE tidak bisa diaktifkan: $e');
     }
@@ -181,10 +181,7 @@ class _ReaderScreenState extends State<ReaderScreen>
               strokeWidth: 2,
             ),
             const SizedBox(height: 16),
-            Text(
-              'Mendekripsi catatan...',
-              style: AppTextStyles.caption,
-            ),
+            Text('Mendekripsi catatan...', style: AppTextStyles.caption),
           ],
         ),
       );
@@ -198,7 +195,11 @@ class _ReaderScreenState extends State<ReaderScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.error_outline, color: AppColors.danger, size: 48),
+              const Icon(
+                Icons.error_outline,
+                color: AppColors.danger,
+                size: 48,
+              ),
               const SizedBox(height: 16),
               Text(
                 _errorMessage!,
@@ -325,12 +326,14 @@ class _ReaderScreenState extends State<ReaderScreen>
                                 : note.content,
                             style: AppTextStyles.body.copyWith(
                               height: 1.8,
-                              color: note.content.isEmpty
-                                  ? AppColors.textSecondary
-                                  : AppColors.textPrimary,
-                              fontStyle: note.content.isEmpty
-                                  ? FontStyle.italic
-                                  : FontStyle.normal,
+                              color:
+                                  note.content.isEmpty
+                                      ? AppColors.textSecondary
+                                      : AppColors.textPrimary,
+                              fontStyle:
+                                  note.content.isEmpty
+                                      ? FontStyle.italic
+                                      : FontStyle.normal,
                             ),
                           ),
                           const SizedBox(height: 80),
