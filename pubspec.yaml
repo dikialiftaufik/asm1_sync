@@ -1,0 +1,47 @@
+name: asm1_sync
+description: "SYNC - Secure Your Neural Cognition. Aplikasi jurnal aman dengan enkripsi AES-256 dan autentikasi biometrik."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # 🔐 BIOMETRIK: Autentikasi sidik jari / Face ID
+  local_auth: ^2.3.0
+
+  # 🔒 ENKRIPSI: AES-256 untuk menyandikan data sebelum disimpan
+  encrypt: ^5.0.3
+
+  # 📁 PATH PROVIDER: Mendapatkan direktori penyimpanan perangkat
+  path_provider: ^2.1.5
+
+  # 🛡️ WINDOW MANAGER: Memblokir screenshot & sembunyikan di Recent Apps
+  flutter_windowmanager: ^0.2.0
+
+  # 🔑 SECURE STORAGE: Menyimpan kunci enkripsi dengan aman di Keystore/Keychain
+  flutter_secure_storage: ^9.2.4
+
+  # 📅 INTL: Format tanggal & waktu dalam Bahasa Indonesia
+  intl: ^0.20.2
+
+  # 🔤 GOOGLE FONTS: Font DM Sans via CDN (tidak perlu download manual)
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/logo.png
+    - assets/images/logo_no-bg.png
