@@ -1,7 +1,7 @@
 # SYNC — Secure Your Neural Cognition
 
 <div align="center">
-  <img src="assets/images/logo_no-bg.png" alt="SYNC Logo" width="120" />
+  <img src="assets/images/logo.png" alt="SYNC Logo" width="120" />
   
   <h3>Jurnal Pribadi Terenkripsi dengan Autentikasi Biometrik</h3>
   

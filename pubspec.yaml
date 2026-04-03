@@ -12,28 +12,13 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
-
-  # 🔐 BIOMETRIK: Autentikasi sidik jari / Face ID
-  local_auth: ^2.3.0
-
-  # 🔒 ENKRIPSI: AES-256 untuk menyandikan data sebelum disimpan
-  encrypt: ^5.0.3
-
-  # 📁 PATH PROVIDER: Mendapatkan direktori penyimpanan perangkat
-  path_provider: ^2.1.5
-
-  # 🛡️ WINDOW MANAGER: Memblokir screenshot & sembunyikan di Recent Apps
-
-  # 🔑 SECURE STORAGE: Menyimpan kunci enkripsi dengan aman di Keystore/Keychain
-  flutter_secure_storage: ^9.2.4
-
-  # 📅 INTL: Format tanggal & waktu dalam Bahasa Indonesia
-  intl: ^0.20.2
-
-  # 🔤 GOOGLE FONTS: Font DM Sans via CDN (tidak perlu download manual)
-  google_fonts: ^6.2.1
-
-  screen_protector: ^1.5.1
+  local_auth: ^2.3.0 # Autentikasi sidik jari
+  encrypt: ^5.0.3 # Framework Kriptografi AES-256
+  path_provider: ^2.1.5 # Mendapatkan direktori penyimpanan perangkat
+  flutter_secure_storage: ^9.2.4 # Menyimpan kunci enkripsi dengan aman di Keystore/Keychain
+  intl: ^0.20.2 # Format tanggal & waktu dalam Bahasa Indonesia
+  google_fonts: ^6.2.1 # Font DM Sans via CDN
+  screen_protector: ^1.5.1 # Memblokir screenshot
 
 dev_dependencies:
   flutter_test:
